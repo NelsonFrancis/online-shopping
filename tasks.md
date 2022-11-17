@@ -7,7 +7,7 @@
 - [x] remove products from global state
 - [x] cart logic
 - [x] create api for products using expressjs, nodejs and connect to mongodb 
-- [ ] add product image in cart page
+- [x] add product image in cart page
 - [ ] add GST deduction on cart page
 - [ ] add delivery charge on cart page
 - [ ] add coupon code option on cart page
