@@ -14,7 +14,6 @@ header{
     color: #000;
 }
 .container{
-    max-width: 1200px;
     min-height: 400px;
     margin-top: 20px !important;
     margin-left: 10px !important;
