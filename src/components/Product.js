@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {ProdContext} from '../App';
+import {Link} from 'react-router-dom';
 
 const Product = ({data}) => {
     const prodContext = useContext(ProdContext);
@@ -52,7 +53,7 @@ const Product = ({data}) => {
   return (
     <>
         <div className='prod-frame'>
-            <img src={data.prodImg} className='prod-img' alt='product' />
+            {/* <img src={data.prodImg} className='prod-img' alt='product' /> */}
             <h3 className='prod-title'>{data.prodName}</h3>
             <p className='prod-desc'><span className='theme-label'>Price</span> &#8377;{data.prodPrice}</p>
             <p className='prod-desc'><span className='theme-label'>Available Quantity</span> {availQty}</p>
@@ -67,6 +68,7 @@ const Product = ({data}) => {
                         <button className='sub-btn' onClick={() => subProd()}>-</button>
                         <br />
                         <button className='prod-sub' onClick={(e) => removeClick(data)}>Remove from Cart</button> 
+                        <Link to="/cart" className='proceed-btn'>Proceed to checkout</Link>
                         </> 
                     :
                     <>

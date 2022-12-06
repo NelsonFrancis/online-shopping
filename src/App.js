@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 import Products from './pages/Products';
 import Header from './components/Header';
 import axios from 'axios';
+import Payment from './pages/Payment';
 
 export const ProdContext = React.createContext();
 
@@ -54,6 +55,7 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route exact path='/products' element={<Products />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/payment" element={<Payment />} />
         </Routes>
       </div>
     </ProdContext.Provider>

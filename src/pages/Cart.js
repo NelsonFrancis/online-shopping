@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {ProdContext} from '../App';
+import {Link} from 'react-router-dom';
 
 const Cart = () => {
   const cartContext = useContext(ProdContext);
@@ -46,6 +47,7 @@ const Cart = () => {
                       )
                     })
                   }
+                  <Link to="/payment" className='proceed-btn'>Proceed to payment</Link>
                 </>
               : 
               <tr>

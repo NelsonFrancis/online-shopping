@@ -177,3 +177,13 @@ td, th{
     height: fit-content;
     margin-top: 30px;
 }
+.proceed-btn {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #2c455e;
+    border: none;
+    margin-top: 10px;
+    color: #fff;
+}
