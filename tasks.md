@@ -1,0 +1,4 @@
+- [ ] sort product based on price low to high
+- [ ] sort product based on price high to low
+- [ ] sort product based on available quantity
+- [ ] pagination functionality

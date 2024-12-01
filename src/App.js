@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
@@ -11,8 +11,9 @@ import Payment from './pages/Payment';
 export const ProdContext = React.createContext();
 
 function App() {
+  const [prod, setProd] = useState([]);
   const initialState = {
-    products: []
+    products: prod
   };
     const reducerFunction = (state, action) => {
       let newState
@@ -41,14 +42,22 @@ function App() {
       axios.get(prodUrl)
       .then(response => {
         initialState.products = response.data;
+        setProd(response.data);
+        // console.log("prod", prod);
       })
       .catch(err => console.log(err))
     }, []);
+
+    const dataFromFilter = (d) => {
+      console.log("data = ", d);
+      setProd(prod.sort((a, b) => a.prodPrice - b.prodPrice));
+    }
   
  
   const [count, dispatch] = useReducer(reducerFunction, initialState);
+  // console.log("count", initialState);
   return (
-    <ProdContext.Provider value={{countState: count, countDispatch: dispatch}}>
+    <ProdContext.Provider value={{countState: count, countDispatch: dispatch, dataFromFilter}}>
       <div className="App">
         <Header />
         <Routes>
