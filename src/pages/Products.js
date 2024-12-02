@@ -7,8 +7,7 @@ const Products = () => {
     const prodContext = useContext(ProdContext);
     let productList = prodContext.countState.products;
     console.log("product list", productList);
-    // let dataFromFilter = prodContext.dataFromFilter;
-    // dataFromFilter(12);
+    
     return (<>
       <Filters />
       <div className='container'>

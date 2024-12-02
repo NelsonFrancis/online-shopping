@@ -1,7 +1,9 @@
-- [ ] sort product based on price low to high
-- [ ] sort product based on price high to low
-- [ ] sort product based on available quantity
+- [x] sort product based on price low to high
+- [x] sort product based on price high to low
+- [x] sort product based on available quantity
 - [ ] pagination functionality
+- [ ] cart link ui and update number functionality
+- [ ] add loader on products page
 - [ ] product detail page
 - [ ] connect with db
 - [ ] backend panel

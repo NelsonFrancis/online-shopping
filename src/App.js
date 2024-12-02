@@ -12,6 +12,7 @@ export const ProdContext = React.createContext();
 
 function App() {
   const [prod, setProd] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
   const initialState = {
     products: prod
   };
@@ -44,11 +45,11 @@ function App() {
           }
           break;
         case 'AVAILABLE_QTY':
-        let availableQtyProducts = state.products.sort((a, b) => a.availableQty - b.availableQty);
-        newState = {
-          products: availableQtyProducts
-        }
-        break;
+          let availableQtyProducts = state.products.sort((a, b) => a.availableQty - b.availableQty);
+          newState = {
+            products: availableQtyProducts
+          }
+          break;
         default:
           return state
       }
@@ -66,16 +67,16 @@ function App() {
       .catch(err => console.log(err))
     }, []);
 
-    const dataFromFilter = (d) => {
-      console.log("data = ", d);
-      setProd(prod.sort((a, b) => a.prodPrice - b.prodPrice));
+    const updateProdNum = (num) => {
+      console.log("prod num = ", num);
+      setCartCount(num);
     }
   
  
   const [count, dispatch] = useReducer(reducerFunction, initialState);
   // console.log("count", initialState);
   return (
-    <ProdContext.Provider value={{countState: count, countDispatch: dispatch, dataFromFilter}}>
+    <ProdContext.Provider value={{countState: count, countDispatch: dispatch, updateProdNum, cartCount}}>
       <div className="App">
         <Header />
         <Routes>

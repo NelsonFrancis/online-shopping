@@ -8,15 +8,21 @@ const Product = ({data}) => {
     const [availQty, setAvailQty] = useState(data.availableQty);
     const [firstRun, setFirstRun] = useState(false);
 
+    let productNumFun = prodContext.updateProdNum;
+    
+
     const addToCartClick = (prodData) => {
         let updatedProd = {...prodData, availableQty: availQty, prodQty: prodNum}
-
+       
         prodContext.countDispatch({
             type: 'ADD_PROD',
             payload: {
                 products: [{...updatedProd }],
             }
         });
+        let cartProd = prodContext.countState.products.filter(c => c.prodQty > 0);
+        // console.log("cartProd", cartProd.length);
+        productNumFun(cartProd.length + 1);
     }
 
     const addProd = () => {
@@ -24,13 +30,14 @@ const Product = ({data}) => {
             setProdNum(prodNum + 1);
             setAvailQty(availQty - 1);
         }
+        
     }
 
     useEffect(() => {
         if (firstRun) {
             addToCartClick(data)
           }
-          setFirstRun(true)
+          setFirstRun(true);
     },[prodNum])
 
     const subProd = () => {
@@ -48,6 +55,8 @@ const Product = ({data}) => {
                 products: [{...updatedProd }],
             }
         });
+        let cartProd = prodContext.countState.products.filter(c => c.prodQty > 0);
+        productNumFun(cartProd.length - 1);
     }
     
   return (
