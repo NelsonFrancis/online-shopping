@@ -2,3 +2,9 @@
 - [ ] sort product based on price high to low
 - [ ] sort product based on available quantity
 - [ ] pagination functionality
+- [ ] product detail page
+- [ ] connect with db
+- [ ] backend panel
+- [ ] payment integration
+- [ ] email integration
+- [ ] sms integration

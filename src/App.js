@@ -31,6 +31,24 @@ function App() {
             products: filteredProducts
           }
           break;
+        case 'SORT_LOW_HIGH':
+          let sortLowToHighProducts = state.products.sort((a, b) => a.prodPrice - b.prodPrice);
+          newState = {
+            products: sortLowToHighProducts
+          }
+          break;
+        case 'SORT_HIGH_LOW':
+          let sortHighToLowProducts = state.products.sort((a, b) => b.prodPrice - a.prodPrice);
+          newState = {
+            products: sortHighToLowProducts
+          }
+          break;
+        case 'AVAILABLE_QTY':
+        let availableQtyProducts = state.products.sort((a, b) => a.availableQty - b.availableQty);
+        newState = {
+          products: availableQtyProducts
+        }
+        break;
         default:
           return state
       }
