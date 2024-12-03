@@ -71,20 +71,20 @@ header{
     margin-top: 15px;
 }
 .prod-title{
-    font-size: 16px;
-    color: #000;
+    font-size: 18px;
+    color: #4495e9;
 }
 .theme-label{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: #4495e9;
+    color: #000;
 }
 .prod-add{
     background-color: #4495e9;
     color: #fff;
     border: none;
     padding: 6px 14px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 4px;
     margin-top: 10px;
     cursor: pointer;
@@ -94,16 +94,17 @@ header{
     color: #fff;
     border: none;
     padding: 5px 14px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 4px;
     margin-top: 10px;
     cursor: pointer;
     margin-right: 10px;
+    font-family: 'Poppins', sans-serif !important;
 }
 .prod-desc{
-    font-size: 14px;
-    font-weight: 500;
-    color: #445557;
+    font-size: 16px;
+    font-weight: 400;
+    color: #485557;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -188,7 +189,7 @@ td, th{
 .proceed-btn {
     display: inline-block;
     padding: 4px 10px;
-    font-size: 12px;
+    font-size: 16px;
     border-radius: 3px;
     background: #2c455e;
     border: none;
