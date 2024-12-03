@@ -13,6 +13,7 @@ export const ProdContext = React.createContext();
 function App() {
   const [prod, setProd] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [loader, setLoader] = useState(false);
   const initialState = {
     products: prod
   };
@@ -58,13 +59,17 @@ function App() {
     
     const prodUrl = 'https://62b9a40fff109cd1dc97470c.mockapi.io/api/userlist/ecommerce';
     useEffect(() => {
+      setLoader(true);
       axios.get(prodUrl)
       .then(response => {
         initialState.products = response.data;
         setProd(response.data);
-        // console.log("prod", prod);
+        setLoader(false);
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err);
+        setLoader(false);
+      })
     }, []);
 
     const updateProdNum = (num) => {
@@ -76,7 +81,7 @@ function App() {
   const [count, dispatch] = useReducer(reducerFunction, initialState);
   // console.log("count", initialState);
   return (
-    <ProdContext.Provider value={{countState: count, countDispatch: dispatch, updateProdNum, cartCount}}>
+    <ProdContext.Provider value={{countState: count, countDispatch: dispatch, updateProdNum, cartCount, loader}}>
       <div className="App">
         <Header />
         <Routes>

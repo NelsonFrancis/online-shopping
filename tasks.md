@@ -3,7 +3,7 @@
 - [x] sort product based on available quantity
 - [x] pagination functionality
 - [x] cart link ui and update number functionality
-- [ ] add loader on products page
+- [x] add loader on products page
 - [ ] product detail page
 - [ ] connect with db
 - [ ] backend panel

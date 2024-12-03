@@ -7,6 +7,7 @@ import Pagination from '../components/Pagination';
 const Products = () => {
     const prodContext = useContext(ProdContext);
     let productList = prodContext.countState.products;
+    let loader = prodContext.loader;
     console.log("product list", productList);
     const [indexFirstItem, setindexFirstItem] = useState();
     const [indexLastItem, setindexLastItem] = useState();
@@ -23,6 +24,7 @@ const Products = () => {
     return (<>
       <Filters />
       <div className='container'>
+        {loader && <div className='loader-wrap'><img src='images/loader.gif' alt='loader' className='loader' /></div>}
           {currentItems ? 
           <>
             {currentItems.map(prodData => {
