@@ -45,7 +45,7 @@ function App() {
           }
           break;
         case 'AVAILABLE_QTY':
-          let availableQtyProducts = state.products.sort((a, b) => a.availableQty - b.availableQty);
+          let availableQtyProducts = state.products.sort((a, b) => b.availableQty - a.availableQty);
           newState = {
             products: availableQtyProducts
           }
