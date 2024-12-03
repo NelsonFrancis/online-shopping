@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import Header from './components/Header';
 import axios from 'axios';
 import Payment from './pages/Payment';
+import ProductDetail from './pages/ProductDetail';
 
 export const ProdContext = React.createContext();
 
@@ -73,7 +74,7 @@ function App() {
     }, []);
 
     const updateProdNum = (num) => {
-      console.log("prod num = ", num);
+      // console.log("prod num = ", num);
       setCartCount(num);
     }
   
@@ -87,6 +88,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/products' element={<Products />} />
+          <Route exact path='/products/:id' element={<ProductDetail />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/payment" element={<Payment />} />
         </Routes>

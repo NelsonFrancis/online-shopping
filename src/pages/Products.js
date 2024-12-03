@@ -13,7 +13,7 @@ const Products = () => {
     const [indexLastItem, setindexLastItem] = useState();
 
     const getPaginationValues = (indexOfFirstItem, indexOfLastItem) => {
-      console.log("pag", indexOfFirstItem, indexOfLastItem);
+      // console.log("pag", indexOfFirstItem, indexOfLastItem);
       setindexFirstItem(indexOfFirstItem);
       setindexLastItem(indexOfLastItem);
     }

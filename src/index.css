@@ -228,6 +228,33 @@ td, th{
     margin-left: auto;
     margin-right: auto;
   }
+  .detail-flex{
+    display: flex;
+  }
+  .img-flex{
+    width: 49%;
+    margin-right: 1%;
+  }
+  .prod-detail-img{
+    width: 100%;
+  }
+  .detail-txt-flex{
+    width: 50%;
+  }
+  .product-detail-hd{
+    font-size: 22px;
+  }
+  .product-detail-line{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .padd10{
+    padding: 20px;
+  }
+  .detail-label{
+    font-weight: 500;
+    margin-right: 5px;
+  }
 @media only screen and (max-width: 768px) {
     .prod-frame {
         width: 80%;
@@ -236,5 +263,15 @@ td, th{
     }
     .container{
         flex-direction: column;
+    }
+    .detail-flex {
+        flex-direction: column;
+    }
+    .img-flex {
+        width: 100%;
+        margin-right: 0;
+    }
+    .detail-txt-flex {
+        width: 100%;
     }
 }
